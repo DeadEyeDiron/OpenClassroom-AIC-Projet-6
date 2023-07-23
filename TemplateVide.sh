@@ -8,9 +8,9 @@ mkdir /saveDocker/DOCKER2
 mkdir /saveDocker/DOCKER3
 
 #Sauvegarde de DOCKER 1
-docker stop DOCKER1
-tar -cvf /saveDocker/DOCKER1.tar  /Vers/Mon/Volume/Docker1
-docker start DOCKER1
+docker stop DOCKER1 #Stop le container 
+tar -cvf /saveDocker/DOCKER1.tar  /Vers/Mon/Volume/Docker1 # Crée l'archive de sauvegarde du container
+docker start DOCKER1 #Start le container
 
 #Sauvegarde de DOCKER 1
 docker stop DOCKER2
@@ -23,7 +23,7 @@ tar -cvf /saveDocker/DOCKER3.tar  /Vers/Mon/Volume/Docker3
 docker start DOCKER3
 
 #Suppression des dossier
-rm -r /saveDocker/DOCKER1
+rm -r /saveDocker/DOCKER1 
 rm -r /saveDocker/DOCKER2
 rm -r /saveDocker/DOCKER3
 
@@ -35,7 +35,7 @@ ladate=`date +%Y_%m_%d`
 chemin=/awstransfer
 mv /SaveDocker.zip  $chemin/$ladate+Savedocker.zip
 
-#Transfert vers S3
+#Transfert vers le bucket S3
 aws s3 mv awstransfer/$ladate+Savedocker.zip s3://VersMonbuketS3
 
 #Suppression des Archive
