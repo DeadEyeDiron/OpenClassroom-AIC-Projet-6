@@ -23,11 +23,11 @@ Il suffira de modifier les divers noms des containers et des chemin de dossier
 
 On se sert de Crontab avec une alerte mail pour nous envoyer le résultat complet du script
 
-## 1 / Ouverture de l'éditeur de Crontab
+### 1 / Ouverture de l'éditeur de Crontab
 ```bash
 crontab -e
 ```
-## 2 / Modification de Crontab
+### 2 / Modification de Crontab
 ```bash
 MAILTO="User@MonDomaine.fr"
 05 2 * *  * /ScriptSauvegarde.sh
